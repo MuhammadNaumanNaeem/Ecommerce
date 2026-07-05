@@ -1,0 +1,599 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Default module",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/categories/": {
+      "get": {
+        "summary": "Get All Categories",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "name": "yxz",
+                "description": "nill"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Data fetched successfully",
+                  "categories": [
+                    {
+                      "id": 3,
+                      "name": "Books",
+                      "description": "Poetry",
+                      "created_at": "2026-07-05T17:03:24.778616Z"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Clothing",
+                      "description": "Men and women",
+                      "created_at": "2026-07-05T13:27:38.323817Z"
+                    },
+                    {
+                      "id": 1,
+                      "name": "Electronic",
+                      "description": "Electronic items",
+                      "created_at": "2026-07-05T13:27:15.768968Z"
+                    }
+                  ]
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "Create Category",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "name": "abc",
+                "description": "nill"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Category created successfully",
+                  "data": {
+                    "id": 5,
+                    "name": "abc",
+                    "description": "nill",
+                    "created_at": "2026-07-05T18:05:56.674287Z"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories/1": {
+      "get": {
+        "summary": "Get Category By ID",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Data fetched successfully",
+                  "category": {
+                    "id": 1,
+                    "name": "Electronic",
+                    "description": "Electronic items",
+                    "created_at": "2026-07-05T13:27:15.768968Z"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories/5/": {
+      "put": {
+        "summary": "Update Category (PUT)",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "name": "abc",
+                "description": "nill-nill"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Category updated successfully",
+                  "category": {
+                    "id": 5,
+                    "name": "abc",
+                    "description": "nill-nill",
+                    "created_at": "2026-07-05T18:05:56.674287Z"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "Delete Category",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "description": "nill"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Category updated successfully",
+                  "category": {
+                    "id": 5,
+                    "name": "abc",
+                    "description": "nill",
+                    "created_at": "2026-07-05T18:05:56.674287Z"
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/categories/4/": {
+      "patch": {
+        "summary": "Partial Update Category (PATCH)",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "description": "nill-nill"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Category updated successfully",
+                  "category": {
+                    "id": 4,
+                    "name": "yxz",
+                    "description": "nill-nill",
+                    "created_at": "2026-07-05T18:01:45.662534Z"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/products": {
+      "get": {
+        "summary": "Get All Products",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Data fetched successfully",
+                  "products": [
+                    {
+                      "id": 4,
+                      "category_name": "Electronic",
+                      "name": "Dell Laptop",
+                      "description": "Core i7 16GB RAM 256 SSD",
+                      "price": "1500.00",
+                      "stock": 10,
+                      "image": null,
+                      "created_at": "2026-07-05T17:13:46.631337Z",
+                      "category": 1
+                    },
+                    {
+                      "id": 3,
+                      "category_name": "Clothing",
+                      "name": "T-Shirt",
+                      "description": "Red",
+                      "price": "1000.00",
+                      "stock": 8,
+                      "image": null,
+                      "created_at": "2026-07-05T13:28:49.854338Z",
+                      "category": 2
+                    },
+                    {
+                      "id": 2,
+                      "category_name": "Electronic",
+                      "name": "Mobile",
+                      "description": "Oppo",
+                      "price": "80000.00",
+                      "stock": 5,
+                      "image": null,
+                      "created_at": "2026-07-05T13:28:29.971977Z",
+                      "category": 1
+                    },
+                    {
+                      "id": 1,
+                      "category_name": "Electronic",
+                      "name": "Laptop",
+                      "description": "hp laptop",
+                      "price": "150000.00",
+                      "stock": 10,
+                      "image": null,
+                      "created_at": "2026-07-05T13:28:10.054509Z",
+                      "category": 1
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/products/": {
+      "post": {
+        "summary": "Create Product",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "category": 2,
+                "name": "Shirt",
+                "description": "Dress Shirt",
+                "price": "3000",
+                "stock": 15
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Product created successfully",
+                  "data": {
+                    "id": 5,
+                    "category_name": "Clothing",
+                    "name": "Shirt",
+                    "description": "Dress Shirt",
+                    "price": "3000.00",
+                    "stock": 15,
+                    "image": null,
+                    "created_at": "2026-07-05T18:33:37.961384Z",
+                    "category": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/products/5": {
+      "get": {
+        "summary": "Get Product By ID",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Data fetched successfully",
+                  "product": {
+                    "id": 5,
+                    "category_name": "Clothing",
+                    "name": "Shirt",
+                    "description": "Dress Shirt",
+                    "price": "3000.00",
+                    "stock": 15,
+                    "image": null,
+                    "created_at": "2026-07-05T18:33:37.961384Z",
+                    "category": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/products/5/": {
+      "put": {
+        "summary": "Update Product (PUT)",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "category": 2,
+                "name": "Shirt",
+                "description": "White Dress Shirt",
+                "price": "3000",
+                "stock": 15
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Product updated successfully",
+                  "product": {
+                    "id": 5,
+                    "category_name": "Clothing",
+                    "name": "Shirt",
+                    "description": "White Dress Shirt",
+                    "price": "3000.00",
+                    "stock": 15,
+                    "image": null,
+                    "created_at": "2026-07-05T18:33:37.961384Z",
+                    "category": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "patch": {
+        "summary": "Partial Update Product (PATCH)",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "description": "Textured White Dress Shirt"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Product updated successfully",
+                  "product": {
+                    "id": 5,
+                    "category_name": "Clothing",
+                    "name": "Shirt",
+                    "description": "Textured White Dress Shirt",
+                    "price": "3000.00",
+                    "stock": 15,
+                    "image": null,
+                    "created_at": "2026-07-05T18:33:37.961384Z",
+                    "category": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "Delete Product",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Product deleted successfully"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}
