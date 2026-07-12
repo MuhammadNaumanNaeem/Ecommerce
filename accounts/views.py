@@ -5,9 +5,17 @@ from rest_framework import permissions
 from .serializers import RegisterSerializer
 from .services import register_user, authenticate_user, get_logged_in_user
 
+from drf_spectacular.utils import extend_schema
+from .serializers import RegisterSerializer, LoginSerializer
 
 class RegisterView(APIView):
     permission_classes = [permissions.AllowAny]
+    @extend_schema(
+    summary="Register User",
+    description="Register a new user account.",
+    request=RegisterSerializer,
+    responses={201: RegisterSerializer},
+    )
 
     def post(self, request):
         try:
@@ -47,7 +55,12 @@ class RegisterView(APIView):
 
 class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
-
+    @extend_schema(
+    summary="Login User",
+    description="Authenticate user and return JWT access and refresh tokens.",
+    request=LoginSerializer,
+    )
+    
     def post(self, request):
         try:
             email = request.data.get("email")
@@ -87,6 +100,10 @@ class LoginView(APIView):
 
 class MeView(APIView):
     permission_classes = [permissions.IsAuthenticated]
+    @extend_schema(
+    summary="Current User",
+    description="Retrieve the authenticated user's profile."
+    )
 
     def get(self, request):
         try:

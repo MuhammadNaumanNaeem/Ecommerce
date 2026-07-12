@@ -10,3 +10,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'role': {'required': False}
         }
+
+class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True)

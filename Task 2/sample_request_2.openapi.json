@@ -1,0 +1,220 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Default module",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/accounts/register/": {
+      "post": {
+        "summary": "Register user",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "username": "nauman",
+                "email": "nauman@gmail.com",
+                "password": "nauman.123"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "User registered successfully.",
+                  "data": {
+                    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgzODk1MjQ2LCJpYXQiOjE3ODM4OTM0NDYsImp0aSI6IjQ4OGZlNzcwZWMyMDQ4NDc5NTkxOWQ2NmUzNTk3ZTEyIiwidXNlcl9pZCI6IjMifQ.ejR8DMxwIbLLRp7NYDA64lCmikuqn89FQorZxCtPAOo",
+                    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4Mzk3OTg0NiwiaWF0IjoxNzgzODkzNDQ2LCJqdGkiOiIzZGU0MTQ4ZmY5OWY0M2Y0YmZhYThmYjI3MGQyYjFjNyIsInVzZXJfaWQiOiIzIn0.l-J2nbGJ-XSJntZolwYw3kDXOMYEn8u1bMQ3_1KxK-Y",
+                    "role": "user"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/accounts/login/": {
+      "post": {
+        "summary": "Login",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "email": "admin@gmail.com",
+                "password": "eadmin321"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Login successful.",
+                  "data": {
+                    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgzODk1MzYzLCJpYXQiOjE3ODM4OTM1NjMsImp0aSI6IjdkZjE3MGQ1MjBkYzQ4MWNiNzFlYTcwZjExZjc3ZjBmIiwidXNlcl9pZCI6IjEifQ.rY0f6njXQoWKeULc4xzyU8nT9MtbRxE-C7gg_Yd90Pw",
+                    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4Mzk3OTk2MywiaWF0IjoxNzgzODkzNTYzLCJqdGkiOiIxMzdhYTNlZTExOWE0NzBlOGRmZWUxZmRkN2Y3Njg4ZiIsInVzZXJfaWQiOiIxIn0.2ZImnsfpm_7AkeV-9MOz6dv7ilgdIx0MnefYTTLokM4",
+                    "role": "admin"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/accounts/me/": {
+      "get": {
+        "summary": "Current User",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgzODk1MzYzLCJpYXQiOjE3ODM4OTM1NjMsImp0aSI6IjdkZjE3MGQ1MjBkYzQ4MWNiNzFlYTcwZjExZjc3ZjBmIiwidXNlcl9pZCI6IjEifQ.rY0f6njXQoWKeULc4xzyU8nT9MtbRxE-C7gg_Yd90Pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "User profile fetched successfully.",
+                  "data": {
+                    "id": 1,
+                    "username": "eadmin",
+                    "email": "admin@gmail.com",
+                    "role": "admin"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/accounts/me": {
+      "get": {
+        "summary": "401 ",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "detail": "Authentication credentials were not provided."
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/products/": {
+      "post": {
+        "summary": "403",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgzODk1MjQ2LCJpYXQiOjE3ODM4OTM0NDYsImp0aSI6IjQ4OGZlNzcwZWMyMDQ4NDc5NTkxOWQ2NmUzNTk3ZTEyIiwidXNlcl9pZCI6IjMifQ.ejR8DMxwIbLLRp7NYDA64lCmikuqn89FQorZxCtPAOo",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "detail": "You do not have permission to perform this action."
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}
