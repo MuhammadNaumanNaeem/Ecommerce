@@ -7,6 +7,7 @@ from .serializers import CategorySerializer, ProductSerializer
 from .services import *
 
 from drf_spectacular.utils import extend_schema, extend_schema_view
+from accounts.permissions import IsAdminOrReadOnly
 
 
 @extend_schema_view(
@@ -14,6 +15,8 @@ from drf_spectacular.utils import extend_schema, extend_schema_view
     post=extend_schema(summary="Create Category"),
 )
 class CategoryView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
+
     def get(self, request):
         return get_categories()
 
@@ -28,6 +31,7 @@ class CategoryView(APIView):
     delete=extend_schema(summary="Delete Category"),
 )
 class CategoryDetailView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
 
     def get(self, request, pk):
         return get_category(pk)
@@ -48,6 +52,8 @@ class CategoryDetailView(APIView):
     post=extend_schema(summary="Create Product"),
 )
 class ProductView(APIView):
+    permission_classes = [IsAdminOrReadOnly]
+
     def get(self, request):
         return get_products()
 
@@ -62,7 +68,8 @@ class ProductView(APIView):
     delete=extend_schema(summary="Delete Product"),
 )
 class ProductDetailView(APIView):
-
+    permission_classes = [IsAdminOrReadOnly]
+    
     def get(self, request, pk):
         return get_product(pk)
 
