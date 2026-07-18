@@ -5,9 +5,11 @@ from rest_framework import status
 from .models import Category, Product
 from .serializers import CategorySerializer, ProductSerializer
 from .services import *
+from .analytics import *
 
 from drf_spectacular.utils import extend_schema, extend_schema_view
 from accounts.permissions import IsAdminOrReadOnly
+from rest_framework.permissions import IsAuthenticated
 
 
 @extend_schema_view(
@@ -81,3 +83,37 @@ class ProductDetailView(APIView):
 
     def delete(self, request, pk):
         return delete_product(pk)
+    
+
+
+
+
+class ProductStatisticsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return product_statistics()
+
+class CategoryStatisticsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return category_statistics()
+
+class MonthlyProductStatisticsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return monthly_product_statistics()
+
+class UserStatisticsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return user_statistics()
+
+class InventoryStatisticsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return inventory_statistics()
