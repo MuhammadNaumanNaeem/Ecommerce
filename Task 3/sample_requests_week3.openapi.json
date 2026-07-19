@@ -1,0 +1,250 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Default module",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/analytics/products/": {
+      "get": {
+        "summary": "Product Analytics",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg0NDYxNzcwLCJpYXQiOjE3ODQ0NTk5NzAsImp0aSI6IjIyNGY2MjcwYjUxMTRkNWFhNzJjNTJmM2FmZDE2NjhmIiwidXNlcl9pZCI6IjEifQ.7tKfrAUKd9XCGA-wG3iTS1JLibTETvqEggwQPMg_rRw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Product statistics fetched successfully.",
+                  "data": {
+                    "total_products": 4,
+                    "average_price": 58125,
+                    "total_stock": 33
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/analytics/categories/": {
+      "get": {
+        "summary": "Category Analytics",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg0NDYxNzcwLCJpYXQiOjE3ODQ0NTk5NzAsImp0aSI6IjIyNGY2MjcwYjUxMTRkNWFhNzJjNTJmM2FmZDE2NjhmIiwidXNlcl9pZCI6IjEifQ.7tKfrAUKd9XCGA-wG3iTS1JLibTETvqEggwQPMg_rRw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Category statistics fetched successfully.",
+                  "data": [
+                    {
+                      "name": "Books",
+                      "total_products": 0
+                    },
+                    {
+                      "name": "Clothing",
+                      "total_products": 1
+                    },
+                    {
+                      "name": "Electronic",
+                      "total_products": 3
+                    },
+                    {
+                      "name": "yxz",
+                      "total_products": 0
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/analytics/monthly-products/": {
+      "get": {
+        "summary": "Monthly Product Analytics",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg0NDYxNzcwLCJpYXQiOjE3ODQ0NTk5NzAsImp0aSI6IjIyNGY2MjcwYjUxMTRkNWFhNzJjNTJmM2FmZDE2NjhmIiwidXNlcl9pZCI6IjEifQ.7tKfrAUKd9XCGA-wG3iTS1JLibTETvqEggwQPMg_rRw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Monthly statistics fetched successfully.",
+                  "data": {
+                    "labels": [
+                      "July 2026"
+                    ],
+                    "totals": [
+                      4
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/analytics/users/": {
+      "get": {
+        "summary": "User Analytics",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg0NDYxNzcwLCJpYXQiOjE3ODQ0NTk5NzAsImp0aSI6IjIyNGY2MjcwYjUxMTRkNWFhNzJjNTJmM2FmZDE2NjhmIiwidXNlcl9pZCI6IjEifQ.7tKfrAUKd9XCGA-wG3iTS1JLibTETvqEggwQPMg_rRw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "User statistics fetched successfully.",
+                  "data": {
+                    "total_users": 3,
+                    "active_users": 3,
+                    "inactive_users": 0,
+                    "admins": 1,
+                    "users": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/analytics/inventory/": {
+      "get": {
+        "summary": "Inventory Analytics",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg0NDYxNzcwLCJpYXQiOjE3ODQ0NTk5NzAsImp0aSI6IjIyNGY2MjcwYjUxMTRkNWFhNzJjNTJmM2FmZDE2NjhmIiwidXNlcl9pZCI6IjEifQ.7tKfrAUKd9XCGA-wG3iTS1JLibTETvqEggwQPMg_rRw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Inventory statistics fetched successfully.",
+                  "data": {
+                    "inventory_value": 1923000,
+                    "average_price": 58125
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}

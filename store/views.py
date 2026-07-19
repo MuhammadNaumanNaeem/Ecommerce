@@ -86,34 +86,106 @@ class ProductDetailView(APIView):
     
 
 
-
-
 class ProductStatisticsView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        summary="Product Statistics",
+        description="Returns total products, average price, and total stock."
+    )
     def get(self, request):
-        return product_statistics()
+        try:
+            return product_statistics()
+        except Exception as e:
+            return Response(
+                {
+                    "success": False,
+                    "message": "Internal Server Error",
+                    "error": str(e),
+                },
+                status=500,
+            )
+
 
 class CategoryStatisticsView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        summary="Category Statistics",
+        description="Returns categories with the total number of products in each category."
+    )
     def get(self, request):
-        return category_statistics()
+        try:
+            return category_statistics()
+        except Exception as e:
+            return Response(
+                {
+                    "success": False,
+                    "message": "Internal Server Error",
+                    "error": str(e),
+                },
+                status=500,
+            )
+
 
 class MonthlyProductStatisticsView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        summary="Monthly Product Statistics",
+        description="Returns monthly product creation statistics."
+    )
     def get(self, request):
-        return monthly_product_statistics()
+        try:
+            return monthly_product_statistics()
+        except Exception as e:
+            return Response(
+                {
+                    "success": False,
+                    "message": "Internal Server Error",
+                    "error": str(e),
+                },
+                status=500,
+            )
+
 
 class UserStatisticsView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        summary="User Statistics",
+        description="Returns active users, inactive users, admin count, and normal user count."
+    )
     def get(self, request):
-        return user_statistics()
+        try:
+            return user_statistics()
+        except Exception as e:
+            return Response(
+                {
+                    "success": False,
+                    "message": "Internal Server Error",
+                    "error": str(e),
+                },
+                status=500,
+            )
+
 
 class InventoryStatisticsView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        summary="Inventory Statistics",
+        description="Returns total inventory value and average product price."
+    )
     def get(self, request):
-        return inventory_statistics()
+        try:
+            return inventory_statistics()
+        except Exception as e:
+            return Response(
+                {
+                    "success": False,
+                    "message": "Internal Server Error",
+                    "error": str(e),
+                },
+                status=500,
+            )
